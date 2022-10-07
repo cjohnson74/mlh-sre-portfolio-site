@@ -1,4 +1,4 @@
-# Production Engineering - Week 1 - Portfolio Site
+# Site Reliability Engineering - Week 1 - Portfolio Site
 
 Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
 
@@ -37,6 +37,14 @@ You need to do all your work here.
 ## Installation
 
 Make sure you have python3 and pip installed
+
+This bash script I wrote allows you to deploy the portfolio site with easy all you need to do is make the file executible and execute the file:
+```bash
+$ chmod +x redeploy-site.sh
+$ ./redeploy-site.sh
+```
+
+### The script you ran above did everything you would normally have to do below... now you don't have to! Below is just for reference.
 
 Create and activate virtual environment using virtualenv
 ```bash
