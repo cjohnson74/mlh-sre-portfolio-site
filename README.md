@@ -43,11 +43,12 @@ This bash script I wrote allows you to deploy the portfolio site with ease. All 
 $ chmod +x redeploy-site.sh
 $ ./redeploy-site.sh
 ```
-You can use the comman:
+That's it?! Ya that's it thanks to bash!!
+
+Side Note: You can use the redeploy-site.sh bash script after making a cahnge to your portfolio site to redeploy with the changes you made.
 ```bash
 $ ./redeploy-site.sh
 ```
-After making a change to the portfolio site to redeploy with the changes you made.
 
 ## The script you ran above did everything you would normally have to do below to install and run the site... now you don't have to! Below is just for reference.
 
