@@ -38,13 +38,18 @@ You need to do all your work here.
 
 Make sure you have python3 and pip installed
 
-This bash script I wrote allows you to deploy the portfolio site with easy all you need to do is make the file executible and execute the file:
+This bash script I wrote allows you to deploy the portfolio site with ease. All you need to do is run the commands below, which make the redeploy-site.sh file executible and then executes the file:
 ```bash
 $ chmod +x redeploy-site.sh
 $ ./redeploy-site.sh
 ```
+You can use the comman:
+```bash
+$ ./redeploy-site.sh
+```
+After making a change to the portfolio site to redeploy with the changes you made.
 
-### The script you ran above did everything you would normally have to do below... now you don't have to! Below is just for reference.
+## The script you ran above did everything you would normally have to do below to install and run the site... now you don't have to! Below is just for reference.
 
 Create and activate virtual environment using virtualenv
 ```bash
