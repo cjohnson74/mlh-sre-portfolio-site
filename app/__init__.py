@@ -6,6 +6,7 @@ from peewee import *
 import json
 import datetime
 from playhouse.shortcuts import model_to_dict
+from pymysql import Time
 
 load_dotenv()
 app = Flask(__name__)
@@ -47,6 +48,22 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
+# @app.route('/api/timeline_post/<id>', methods=['DELETE'])
+# def delete_time_line_post(id):
+#     post = TimelinePost.query.get(id)
+#     mydb.session.delete(post)
+#     mydb.session.commit()
+
+#     return {
+#         'timeline_post_deleted': [
+#             model_to_dict(post)
+#         ],
+#         'timeline_posts': [
+#             model_to_dict(p)
+#             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+#         ]
+#     }
 
 with open('app/static/profiles.json') as f:
     parsedProfiles = json.load(f)
