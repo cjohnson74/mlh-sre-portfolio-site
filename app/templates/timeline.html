@@ -23,9 +23,11 @@
 </div>
 
 <script>
+    console.log("Made it");
   const form = document.getElementById("form");
 
   form.addEventListener("submit", function (e) {
+    console.log("Made it after button");
     e.preventDefault();
 
     const formData = new FormData(form);
@@ -41,7 +43,7 @@
     .then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err))
-    .then(window.location.reload())
+    //.then(window.location.reload())
 
   });
 </script>
