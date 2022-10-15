@@ -49,6 +49,11 @@ def get_time_line_post():
         ]
     }
 
+@app.route('/timeline')
+def timeline():
+    timelinePosts = get_time_line_post()
+    return render_template('timeline.html', userPosts = timelinePosts['timeline_posts'], title="Timeline")
+
 # @app.route('/api/timeline_post/<id>', methods=['DELETE'])
 # def delete_time_line_post(id):
 #     post = TimelinePost.query.get(id)

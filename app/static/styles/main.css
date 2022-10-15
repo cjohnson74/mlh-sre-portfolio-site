@@ -54,7 +54,7 @@ body {
     background-color: #1d539f;
     overflow: hidden;
   }
-  
+
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
@@ -117,7 +117,7 @@ body {
 
 .profile .profile-picture {
     margin-bottom: 30px;
-    height: 250px; 
+    height: 250px;
     /*
     changed height from 200px -> 250px
     */
@@ -125,7 +125,7 @@ body {
 
 .map-profile {
     margin-bottom: 30px;
-    height: 200px; 
+    height: 200px;
 }
 
 .map-text {
@@ -193,6 +193,13 @@ body {
     margin: 1%;
     width: 30%;
     float: left;
+}
+
+.timeline {
+    text-align: center;
+    height: 320px;
+    margin: auto;
+    width: 70%;
 }
 
 div.vertical-line{

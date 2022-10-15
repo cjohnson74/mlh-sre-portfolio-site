@@ -1,0 +1,48 @@
+{% extends "index.html" %} {% block body %}
+<div class="semi-header">
+  <h1>Welcome to our Timeline!</h1>
+  <h3>Feel free to make a post below!</h3>
+</div>
+
+<hr style="width: 70%; text-align: center" />
+
+<div class="timeline">
+  <form id="form">
+    <input name="name" type="text" placeholder="name"/>
+    <input name="email" type="email" placeholder="email"/>
+    <input name="content" type="text" placeholder="content"/>
+    <button type="submit">Post</button>
+  </form>
+  {% for post in userPosts %}
+  <h2>{{ post.name }}</h2>
+  <h2>{{ post.email }}</h2>
+  <h5>{{post.created_at}}</h5>
+  <h3>{{ post.content }}</h3>
+  <hr style="width: 100%; text-align: center" />
+  {% endfor %}
+</div>
+
+<script>
+  const form = document.getElementById("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = new URLSearchParams(formData);
+
+    console.log(payload);
+
+    fetch("http://127.0.0.1:5000/api/timeline_post", {
+        method: "POST",
+        body: payload,
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+    .then(window.location.reload())
+
+  });
+</script>
+{% endblock body %}
