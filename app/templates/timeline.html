@@ -23,11 +23,9 @@
 </div>
 
 <script>
-    console.log("Made it");
   const form = document.getElementById("form");
 
   form.addEventListener("submit", function (e) {
-    console.log("Made it after button");
     e.preventDefault();
 
     const formData = new FormData(form);
@@ -36,7 +34,7 @@
 
     console.log(payload);
 
-    fetch("http://localhost:5000/api/timeline_post", {
+    fetch("http://flask-portfolio.duckdns.org:5000/api/timeline_post", {
         method: "POST",
         body: payload,
     })
