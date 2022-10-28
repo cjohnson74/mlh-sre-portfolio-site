@@ -1,7 +1,5 @@
 #!/bin/bash
 
-tmux kill-server
-
 cd ~/mlh-sre-portfolio-site
 
 git fetch && git reset origin/main --hard
