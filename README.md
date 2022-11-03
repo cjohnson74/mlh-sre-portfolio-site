@@ -31,6 +31,20 @@ Line 38: Define a named volume nginx_secrets
 
 If you'd like to learn more about how this docker container image works behind the scenes, I recommend checking out their GitHub [README](https://github.com/JonasAlfredsson/docker-nginx-certbot#more-resources), specifically, the "Good to Know" document.
 
+### Add Nginx Configuration File
+Create a directory named "user_conf.d" under your project root directory. Create a myportfolio.conf inside this folder.
+![image](https://user-images.githubusercontent.com/52815609/199757085-9073c006-f4c3-499c-bd44-652829f924d7.png)
+
+Note: Replaced lines 3 and 12 with my own duckdns domain name.
+
+Line 1-8: Listen for HTTP traffic at port 80 and 301 redirect to HTTPS
+
+Line 11: Listen for HTTPS traffic at port 443
+
+Line 14-16: Reverse proxy traffic to our myportfolio container port 5000
+
+Line 19-21: Used by jonasal/nginx-certbot to generate certifications from LetsEncrypt
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
