@@ -2,6 +2,19 @@
 
 Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
 
+## Technologies
+
+### Set Up Nginx and HTTPS
+Architecture and network traffic flow before nginx:
+![image](https://user-images.githubusercontent.com/52815609/199749647-a9c56de6-1148-4b3b-809c-be8810198107.png)
+It is common for production workloads to include a reverse proxy to sit in front of the web server like so:
+![image](https://user-images.githubusercontent.com/52815609/199749926-2f17c71d-7f8c-4f48-b43a-fa514d194c1d.png)
+There are a number of benefits of having a reverse proxy which includes: Load balancing, SSL termination, Logging, Access control, and more! I am mainly using this for SSL termination at this time which means HTTPS traffic is decrypted and encrypted inside the Nginx container. The Nginx container then communicates with the Flask container over HTTP.
+
+### Added Nginx Service to docker-compose.prod.yml
+I created an nginx container that handles automatic SSL certificate generation and serves traffic using HTTPS for me. I used a ready-made docker image jonasal/nginx-certbot. You can learn more about it on [Dockerhub](https://hub.docker.com/r/jonasal/nginx-certbot).
+![image](https://user-images.githubusercontent.com/52815609/199750396-fd228da7-4df3-4052-8d26-ed4ec95d1c26.png)
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
