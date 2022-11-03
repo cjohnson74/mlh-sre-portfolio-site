@@ -15,6 +15,22 @@ There are a number of benefits of having a reverse proxy which includes: Load ba
 I created an nginx container that handles automatic SSL certificate generation and serves traffic using HTTPS for me. I used a ready-made docker image jonasal/nginx-certbot. You can learn more about it on [Dockerhub](https://hub.docker.com/r/jonasal/nginx-certbot).
 ![image](https://user-images.githubusercontent.com/52815609/199750396-fd228da7-4df3-4052-8d26-ed4ec95d1c26.png)
 
+Note I removed the port mapping 5000:5000 from the myportfolio container because internet traffic will now go through nginx which will relay traffic to the myportfolio (Flask) container.
+
+Line 21: Define nginx container
+
+Line 25: Required environment variable to generate certificates
+
+Line 27-29: Bind HTTP and HTTPS ports to the internet
+
+Line 31: Store generated certificate files in a volume so they are not lost upon restart
+
+Line 32: Map nginx configuration files under the directory user_conf.d into the container.
+
+Line 38: Define a named volume nginx_secrets
+
+If you'd like to learn more about how this docker container image works behind the scenes, I recommend checking out their GitHub [README](https://github.com/JonasAlfredsson/docker-nginx-certbot#more-resources), specifically, the "Good to Know" document.
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
