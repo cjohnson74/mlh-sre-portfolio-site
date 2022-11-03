@@ -25,7 +25,7 @@ services:
       environment:
          - CERTBOT_EMAIL=cjohnson74.tech@gmail.com
       ports:
-         - 80:00
+         - 80:80
          - 443:443
       volumes:
          - nginx_secrets:/etc/letsencrypt
