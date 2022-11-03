@@ -31,7 +31,7 @@ Line 38: Define a named volume nginx_secrets
 
 If you'd like to learn more about how this docker container image works behind the scenes, I recommend checking out their GitHub [README](https://github.com/JonasAlfredsson/docker-nginx-certbot#more-resources), specifically, the "Good to Know" document.
 
-### Add Nginx Configuration File
+### Added Nginx Configuration File
 Create a directory named "user_conf.d" under your project root directory. Create a myportfolio.conf inside this folder.
 ![image](https://user-images.githubusercontent.com/52815609/199757085-9073c006-f4c3-499c-bd44-652829f924d7.png)
 
