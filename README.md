@@ -2,6 +2,49 @@
 
 Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
 
+## Technologies
+
+### Set Up Nginx and HTTPS
+Architecture and network traffic flow before nginx:
+![image](https://user-images.githubusercontent.com/52815609/199749647-a9c56de6-1148-4b3b-809c-be8810198107.png)
+It is common for production workloads to include a reverse proxy to sit in front of the web server like so:
+![image](https://user-images.githubusercontent.com/52815609/199749926-2f17c71d-7f8c-4f48-b43a-fa514d194c1d.png)
+There are a number of benefits of having a reverse proxy which includes: Load balancing, SSL termination, Logging, Access control, and more! I am mainly using this for SSL termination at this time which means HTTPS traffic is decrypted and encrypted inside the Nginx container. The Nginx container then communicates with the Flask container over HTTP.
+
+### Added Nginx Service to docker-compose.prod.yml
+I created an nginx container that handles automatic SSL certificate generation and serves traffic using HTTPS for me. I used a ready-made docker image jonasal/nginx-certbot. You can learn more about it on [Dockerhub](https://hub.docker.com/r/jonasal/nginx-certbot).
+![image](https://user-images.githubusercontent.com/52815609/199750396-fd228da7-4df3-4052-8d26-ed4ec95d1c26.png)
+
+Note I removed the port mapping 5000:5000 from the myportfolio container because internet traffic will now go through nginx which will relay traffic to the myportfolio (Flask) container.
+
+Line 21: Define nginx container
+
+Line 25: Required environment variable to generate certificates
+
+Line 27-29: Bind HTTP and HTTPS ports to the internet
+
+Line 31: Store generated certificate files in a volume so they are not lost upon restart
+
+Line 32: Map nginx configuration files under the directory user_conf.d into the container.
+
+Line 38: Define a named volume nginx_secrets
+
+If you'd like to learn more about how this docker container image works behind the scenes, I recommend checking out their GitHub [README](https://github.com/JonasAlfredsson/docker-nginx-certbot#more-resources), specifically, the "Good to Know" document.
+
+### Added Nginx Configuration File
+Create a directory named "user_conf.d" under your project root directory. Create a myportfolio.conf inside this folder.
+![image](https://user-images.githubusercontent.com/52815609/199757085-9073c006-f4c3-499c-bd44-652829f924d7.png)
+
+Note: Replaced lines 3 and 12 with my own duckdns domain name.
+
+Line 1-8: Listen for HTTP traffic at port 80 and 301 redirect to HTTPS
+
+Line 11: Listen for HTTPS traffic at port 443
+
+Line 14-16: Reverse proxy traffic to our myportfolio container port 5000
+
+Line 19-21: Used by jonasal/nginx-certbot to generate certifications from LetsEncrypt
+
 ## Tasks
 
 Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
