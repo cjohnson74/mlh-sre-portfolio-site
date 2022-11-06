@@ -38,9 +38,15 @@ mydb.create_tables([TimelinePost])
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    name = request.form.get('name', '')
+    if name == '':
+        return "Invalid name", 400
+    email = request.form.get('email', '')
+    if "@" not in email:
+        return "Invalid email", 400
+    content = request.form.get('content', '')
+    if content == '':
+        return "Invalid content", 400
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
     return model_to_dict(timeline_post)
 
@@ -100,3 +106,7 @@ def places():
 @app.route('/contact')
 def contact():
     return render_template('contact.html', profiles = parsedProfiles, url=os.getenv("URL"))
+
+
+
+
