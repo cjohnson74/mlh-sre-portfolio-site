@@ -9,6 +9,26 @@
         "resume": "https://docs.google.com/document/d/1OhMUhtMjt0_1zBVzizBhAYNICdYJtOYmplixadGipmE/edit?usp=sharing",
         "workExperience": [
             {
+            "company": "Salesforce",
+            "title": "Software Engineer Intern",
+            "description": "Learn our development process, culture, and codebase, then improve it. Work closely with a team of engineers, product managers, user experience experts and performance engineers to build new features our customers will love, adopt and use while keeping our trusted platform stable and scalable. Architect, design, implement, test, and deliver highly scalable products through high impact projects.",
+            "startMonth": "June",
+            "startYear": "2023",
+            "endMonth": "August",
+            "endYear": "2023",
+            "present": false
+            },
+            {
+            "company": "Google",
+            "title": "MLH Site Reliability Engineering Fellow",
+            "description": "1 of 96 selected out of 3,000+ applicants to be a fellow. 1 of 5 selected out of the 96 fellows to work with Google. Collaborating with Google Engineers working on real-world projects to learn SRE skills. Learn the skills needed to keep products running. Write code and debug hard problems. Gain valuable technical skills and the experience needed for a career in Site Reliability Engineering. Gained practical skills from Linux Foundation Training & Certifications' LFS201 - Essentials of System Administration training course which covers: how to administer, configure and upgrade Linux systems, along with the tools and concepts necessary to efficiently build and manage a production Linux infrastructure.",
+            "startMonth": "September",
+            "startYear": "2022",
+            "endMonth": "December",
+            "endYear": "2022",
+            "present": true
+            },
+            {
             "company": "CSG International",
             "title": ".NET Engineer Intern",
             "description": "Gained experience working in several areas of the largest BSS on AWS, the Ascendon product. Technologies:  C#, .NET Core, SQL, AWS, Azure, Agile Scrum, Sprints, Jira, Git, Elastic Search, back-end Responsibilities: Developed an API stub for one of the companies largest payment gateway vendor Decreased testing costs by 20%, integrated 3D Secure 2.0 into the stub to allow for 95% fraud protection. Created a component test to test the stub asynchronous as I developed it; 3D Secure 2.0 flow testing included. Presented to CEO and executives; made technical concepts easy to grasp; received 100% positive feedback",
@@ -42,6 +62,14 @@
         "hobbies": ["Antique Shopping", "Hiking", "Mobile Development", "Full-Stack Development"],
         "education": [
             {
+            "school": "University of Florida",
+            "major": "Computer Science",
+            "startMonth": "January",
+            "startYear": "2022",
+            "endMonth": "December",
+            "endYear": "2024"
+            },
+            {
             "school": "University of Central Florida",
             "major": "Full-Stack Web Development",
             "startMonth": "September",
@@ -55,7 +83,7 @@
             "startMonth": "January",
             "startYear": "2022",
             "endMonth": "December",
-            "endYear": "2024"
+            "endYear": "2022"
             },
             {
             "school": "Florida Southwestern State College",
