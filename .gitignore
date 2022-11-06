@@ -1,5 +1,6 @@
 .venv
 __pycache__
+.vs.code
 *.pyc
 .env
 python3-virtualenv
