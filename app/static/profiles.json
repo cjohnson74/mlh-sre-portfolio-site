@@ -9,16 +9,6 @@
         "resume": "https://docs.google.com/document/d/1OhMUhtMjt0_1zBVzizBhAYNICdYJtOYmplixadGipmE/edit?usp=sharing",
         "workExperience": [
             {
-            "company": "Salesforce",
-            "title": "Software Engineer Intern",
-            "description": "Learn our development process, culture, and codebase, then improve it. Work closely with a team of engineers, product managers, user experience experts and performance engineers to build new features our customers will love, adopt and use while keeping our trusted platform stable and scalable. Architect, design, implement, test, and deliver highly scalable products through high impact projects.",
-            "startMonth": "June",
-            "startYear": "2023",
-            "endMonth": "August",
-            "endYear": "2023",
-            "present": false
-            },
-            {
             "company": "Google",
             "title": "MLH Site Reliability Engineering Fellow",
             "description": "1 of 96 selected out of 3,000+ applicants to be a fellow. 1 of 5 selected out of the 96 fellows to work with Google. Collaborating with Google Engineers working on real-world projects to learn SRE skills. Learn the skills needed to keep products running. Write code and debug hard problems. Gain valuable technical skills and the experience needed for a career in Site Reliability Engineering. Gained practical skills from Linux Foundation Training & Certifications' LFS201 - Essentials of System Administration training course which covers: how to administer, configure and upgrade Linux systems, along with the tools and concepts necessary to efficiently build and manage a production Linux infrastructure.",
