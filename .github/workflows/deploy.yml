@@ -31,6 +31,7 @@ jobs:
       - name: Deploy Site
         run: |
           ssh my-vps '~/redeploy-site.sh'
+          pwd
           cd ~/mlh-sre-portfolio-site/
           docker-compose ps
 
