@@ -30,8 +30,8 @@ jobs:
 
       - name: Deploy Site
         run: |
-          ssh my-vps '~/redeploy-site.sh'
           ssh my-vps 'cd ~/mlh-sre-portfolio-site/
+          ./redeploy-site.sh
           docker-compose ps'
 
       - name: Send Discord Success Message
