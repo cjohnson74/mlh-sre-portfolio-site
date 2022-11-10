@@ -31,9 +31,8 @@ jobs:
       - name: Deploy Site
         run: |
           ssh my-vps '~/redeploy-site.sh'
-          pwd
-          cd ~/mlh-sre-portfolio-site/
-          docker-compose ps
+          ssh my-vps 'cd ~/mlh-sre-portfolio-site/
+          docker-compose ps'
 
       - name: Send Discord Success Message
         run: curl -s -X POST "{{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
