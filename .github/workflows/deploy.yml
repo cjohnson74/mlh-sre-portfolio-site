@@ -35,4 +35,4 @@ jobs:
         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
 
       - name: Send Discord Success Message
-        run: curl -s -X POST "{{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
