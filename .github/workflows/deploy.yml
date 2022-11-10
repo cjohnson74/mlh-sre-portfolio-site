@@ -29,10 +29,10 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy Site
-        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ./redeploy-site.sh'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ./redeploy-site.sh && pwd'
 
       - name: Print Container Status
-        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
-        
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
+
       - name: Send Discord Success Message
         run: curl -s -X POST "{{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
