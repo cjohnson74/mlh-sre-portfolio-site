@@ -32,8 +32,8 @@ jobs:
 
          - name: Send Discord Success Message
            if: ${{ success() }}
-           run: curl -s -X POST "${{ secrets.DISCORD_TESTING_WEBHOOK }}" -d "content=✅ Tests Passed! $(date +'%Y-%m-%dT%H:%M:%S')"
+           run: curl -s -X POST "${{ secrets.DISCORD_TESTING_WEBHOOK }}" -d "content=✅ Tests Passed! $(date +'%Y-%m-%d %H:%M:%S')"
 
          - name: Send Discord Failure Message
            if: ${{ failure() }}
-           run: curl -s -X POST "${{ secrets.DISCORD_TESTING_WEBHOOK }}" -d "content=❌ Tests Failed. $(date +'%Y-%m-%dT%H:%M:%S')"
+           run: curl -s -X POST "${{ secrets.DISCORD_TESTING_WEBHOOK }}" -d "content=❌ Tests Failed. $(date +'%Y-%m-%d %H:%M:%S')"

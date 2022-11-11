@@ -40,8 +40,8 @@ jobs:
 
       - name: Send Discord Success Message
         if: ${{ success() }}
-        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful! $(date +'%Y-%m-%dT%H:%M:%S')"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful! $(date +'%Y-%m-%d %H:%M:%S')"
 
       - name: Send Discord Failure Message
         if: ${{ failure() }}
-        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed $(date +'%Y-%m-%dT%H:%M:%S')"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed $(date +'%Y-%m-%d %H:%M:%S')"
