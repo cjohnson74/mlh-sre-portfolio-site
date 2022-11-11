@@ -29,6 +29,14 @@ jobs:
 
         - name: Run Tests
           run: ./run_test.sh
+
+        - name: Send Discord Success Message
+        if: ${{ success() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Tests Successful. Attempting Deployment."
+
+        - name: Send Discord Failure Message
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Tests Failed. Did not attempt Deployment."
   deploy:
     needs: test
     name: "Deploy to VPS"
