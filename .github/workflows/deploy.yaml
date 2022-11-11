@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     uses: ./.github/workflows/test.yaml
+    secrets: inherit
   deploy:
     needs: test
     name: "Deploy to VPS"
