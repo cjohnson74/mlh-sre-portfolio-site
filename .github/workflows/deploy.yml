@@ -36,7 +36,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Configure SSH
-         run: |
+        run: |
             mkdir -p ~/.ssh/
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
             chmod 600 ~/.ssh/deploy-key.pem
@@ -53,15 +53,15 @@ jobs:
             SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy Site
-         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ./redeploy-site.sh && pwd'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && ./redeploy-site.sh && pwd'
 
       - name: Print Container Status
-         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
 
       - name: Send Discord Success Message
-         if: ${{ success() }}
-         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+        if: ${{ success() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
 
       - name: Send Discord Failure Message
-         if: ${{ failure() }}
-         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
+        if: ${{ failure() }}
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
