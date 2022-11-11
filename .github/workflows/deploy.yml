@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  - test:
+  test:
       runs-on: ubuntu-latest
       name: Run Tests
       env:
@@ -30,7 +30,7 @@ jobs:
          - name: Run Tests
            run: ./run_test.sh
 
-  - deploy:
+  deploy:
       needs: test
       name: "Deploy to VPS"
       runs-on: ubuntu-latest
