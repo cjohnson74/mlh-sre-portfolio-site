@@ -29,6 +29,7 @@ jobs:
 
          - name: Run Tests
            run: ./run_test.sh
+           
   deploy:
       needs: test
       name: "Deploy to VPS"
