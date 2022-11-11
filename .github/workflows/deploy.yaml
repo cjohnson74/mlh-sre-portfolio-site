@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Tests
     env:
-        TESTING: true
+      TESTING: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
